@@ -17,7 +17,7 @@ router.post("/maketeam", async (req, res) => {
       fields.push(user._id);
     }
   });
-  await User.findOne({ name: name1 }).then((user) => {
+  await User.findOne({ name: name2 }).then((user) => {
     if (!user) {
       return res.json("no user found");
     } else {
