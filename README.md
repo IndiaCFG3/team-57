@@ -10,5 +10,5 @@ init to win it 💯✈️
 ##### Display charts
 ##### Uploading youtube videos
 ##### Feedback Form
-##### Teacher and student-teachr registration
+##### Teacher and student-teacher registration
 ###### Firebase , MERN Stack , React Native .
