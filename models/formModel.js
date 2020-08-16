@@ -6,7 +6,10 @@ const formSchema = new mongoose.Schema({
     type: ObjectId,
     ref: "Team",
   },
-  classPresence: {},
+  classPresence: {
+    type: Number,
+    required: true,
+  },
   initiative: {
     type: Number,
     required: true,
@@ -32,4 +35,4 @@ const formSchema = new mongoose.Schema({
   },
 });
 
-mongoose.model("Team", formSchema);
+mongoose.model("Form", formSchema);

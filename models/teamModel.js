@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
 const teamSchema = new mongoose.Schema({
   name: {
-    typ: String,
+    type: String,
     required: true,
   },
   student1: {
