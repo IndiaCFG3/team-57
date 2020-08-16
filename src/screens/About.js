@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet,Text } from 'react-native';
 
 
 export default function Analytics({ navigation }) {
@@ -12,11 +12,11 @@ export default function Analytics({ navigation }) {
   
   return (
     <View style={styles.rootContainer}>
-     <Text style={{textAlign: 'center',color: 'red',fontSize:20,fontWeight: 'bold'}} >Inquilab Foundation</Text>
-     <Text style={{textAlign: 'center',color: 'black',fontSize:16}}>The mediocre teacher tells </Text>
-     <Text style={{textAlign: 'center',color: 'black',fontSize:16}}>The good teacher explains </Text>
-     <Text style={{textAlign: 'center',color: 'black',fontSize:16}}>The superior teacher demonstrates </Text>
-     <Text style={{textAlign: 'center',color: 'black',fontSize:16}}>The great teacher inspires </Text>
+     <Text style={{textAlign: 'center',color: 'red',fontSize:40,fontWeight: 'bold'}} >Inquilab Foundation</Text>
+     <Text style={{textAlign: 'center',color: 'black',fontSize:20}}>The mediocre teacher tells </Text>
+     <Text style={{textAlign: 'center',color: 'black',fontSize:20}}>The good teacher explains </Text>
+     <Text style={{textAlign: 'center',color: 'black',fontSize:20}}>The superior teacher demonstrates </Text>
+     <Text style={{textAlign: 'center',color: 'black',fontSize:20}}>The great teacher inspires </Text>
      <Text style={{textAlign: 'center',color: 'black',fontWeight: 'bold',fontSize:16}} > Made with love by team CODE-STARS</Text>
     </View>
   );
@@ -24,7 +24,8 @@ export default function Analytics({ navigation }) {
 
 const styles = StyleSheet.create({
   rootContainer: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
   },
   closeButtonContainer: {
     position: 'absolute',

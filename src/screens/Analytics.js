@@ -45,7 +45,7 @@ export default function Analytics({ navigation }) {
               data: [ 75,80, 80, 99, 100]
             }
           ]
-        };
+     } };
 
   /**
    * Create a new Firestore collection to save threads
@@ -53,7 +53,8 @@ export default function Analytics({ navigation }) {
   
   return (
     <View style={styles.rootContainer}>
-     <BarChart
+
+    <BarChart
   //style={graphStyle}
   data={data}
   width={screenWidth }
@@ -79,7 +80,7 @@ export default function Analytics({ navigation }) {
   useShadowColorFromDataset: false // optional
 }}
   verticalLabelRotation={330}
-/>
+ />
 <PieChart
   data={data1}
   width={screenWidth}
@@ -97,23 +98,5 @@ export default function Analytics({ navigation }) {
 const styles = StyleSheet.create({
   rootContainer: {
     flex: 1
-  },
-  closeButtonContainer: {
-    position: 'absolute',
-    top: 30,
-    right: 0,
-    zIndex: 1
-  },
-  innerContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 10
-  },
-  buttonLabel: {
-    fontSize: 22
   }
-});
+})
