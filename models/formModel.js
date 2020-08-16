@@ -33,4 +33,4 @@ const formSchema = new mongoose.Schema({
   },
 });
 
-mongoose.model("Team", formSchema);
+mongoose.model("evalForm", formSchema);
