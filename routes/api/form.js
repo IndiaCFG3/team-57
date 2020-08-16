@@ -41,11 +41,17 @@ router.post("/evalForm", async (req, res) => {
       await sharp(req.files.photo[0].buffer)
          .toFormat("jpeg")
          .jpeg({ quality: 90 })
-         .toFile(`client/public/evalIamges/${req.body.photo}`);
+         .toFile(`client/public/evalImages/${req.body.photo}`);
    }
 
    const form = new Form({
-      photo: req.body.photo
+      photo: req.body.photo,
+      classPresence: 8,
+      initiative: 8,
+      mentoring: 8,
+      confidence: 8,
+      leadership: 8,
+      subject: "PE"
    });
    form
      .save()
