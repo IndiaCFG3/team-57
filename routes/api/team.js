@@ -35,4 +35,25 @@ router.post("/maketeam", async (req, res) => {
     .catch((err) => console.log(err));
 });
 
+router.get("/teams", async (req, res) => {
+  try {
+    const teams = await Team.find().sort({ date: -1 });
+    res.json(teams);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+router.get("/team/:id", async (req, res) => {
+  Team.findOne({ _id: req.params.id })
+    .then((team) => {
+      res.json({ team });
+    })
+    .catch((err) => {
+      console.log(err);
+      return res.status(404).json({ error: "team not found" });
+    });
+});
+
 module.exports = router;
