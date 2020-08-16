@@ -20,11 +20,13 @@ mongoose.connection.on("error", (err) => {
 require("./models/user");
 require("./models/teamModel.js");
 require("./models/formModel.js");
+require("./models/video.js");
 
 app.use(require("./routes/api/auth"));
 app.use(require("./routes/api/user"));
 app.use(require("./routes/api/team"));
 app.use(require("./routes/api/form"));
+app.use(require("./routes/api/uploadVideo"));
 
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));

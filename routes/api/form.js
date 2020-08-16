@@ -66,4 +66,26 @@ router.post("/evalForm", async (req, res) => {
 
 });
 
+router.get("/forms", async (req, res) => {
+    try {
+      const forms = await Form.find().sort({ date: -1 });
+      res.json(forms);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server Error");
+    }
+  });
+  
+  router.get("/form/:id", async (req, res) => {
+    Form.findOne({ _id: req.params.id })
+      .then((form) => {
+        res.json({ form });
+      })
+      .catch((err) => {
+        console.log(err);
+        return res.status(404).json({ error: "Form not found" });
+      });
+  });
+  
+
 module.exports = router;
