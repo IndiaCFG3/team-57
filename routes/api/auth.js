@@ -92,7 +92,8 @@ router.post('/signup/studentTeacher',(req,res)=>{
                 password:hashedpassword,
                 name,
                 role,
-                standard
+                standard,
+                school
             })
     
             user.save()
