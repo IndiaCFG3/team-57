@@ -6,13 +6,13 @@ const Profile=()=>{
     return (
         <div>
             <nav>
-                <div className="nav-wrapper black">
+                {/* <div className="nav-wrapper black">
                 <Link to="/" className="left">
                     <h3>CodeStars</h3></Link>
                 <ul id="nav-mobile" className="right">
                     <li><Link to="/profile">Profile</Link></li>
                 </ul>
-                </div>
+                </div> */}
             </nav>
             <div className="container">
                 <table className="table">

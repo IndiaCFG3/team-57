@@ -8,6 +8,8 @@ import Login from './components/screens/Login'
 import Navbar from './components/Navbar';
 import Teacher from './components/screens/Teacher';
 import StudentTeacher from './components/screens/StudentTeacher';
+import StudentList from './components/screens/StudentList';
+import TeamList from './components/screens/TeamList';
 import CreateTeam from './components/screens/CreateTeam';
 // import Landing from './components/layout/Landing';
 // import Routes from './components/routing/Routes';
@@ -16,6 +18,7 @@ import "./App.css";
 function App() {
   return (
    <Router>
+    <Navbar/>
     <Switch>
     <Route path='/' exact component={Home}/>
     <Route path='/profile' exact component={Profile}/>

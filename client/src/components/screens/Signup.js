@@ -32,7 +32,7 @@ const signup=()=>{
   return (
     <div className="mycard">
       <nav>
-    <div className="nav-wrapper black">
+    {/* <div className="nav-wrapper black">
       <Link to="/" className="left">
         <h3>CodeStars</h3></Link>
       <ul id="nav-mobile" className="right ">
@@ -40,7 +40,7 @@ const signup=()=>{
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Signup</Link></li>
       </ul>
-    </div>
+    </div> */}
   </nav>
       <div className="card auth-card input-field">
         <h2>Code stars</h2>

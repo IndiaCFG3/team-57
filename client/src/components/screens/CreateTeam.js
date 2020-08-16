@@ -36,7 +36,7 @@ class CreateTeam extends Component {
     render () {
         return (
             <div>
-                <nav>
+                {/* <nav>
                     <div className="nav-wrapper black">
                     <Link to="/" className="left">
                         <h3>CodeStars</h3></Link>
@@ -44,7 +44,7 @@ class CreateTeam extends Component {
                         <li><Link to="/profile">Profile</Link></li>
                     </ul>
                     </div>
-                </nav>
+                </nav> */}
                 <nav className="navbar navbar-light btn-info lighten-4">
                 
                 <span>Hello, {this.state.teacher}</span>
