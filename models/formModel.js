@@ -7,7 +7,10 @@ const formSchema = new mongoose.Schema({
     ref: "Team",
   },
   photo: { type: String },
-  classPresence: {},
+  classPresence: {
+    type: Number,
+    required: true,
+  },
   initiative: {
     type: Number,
     required: true,
@@ -33,4 +36,4 @@ const formSchema = new mongoose.Schema({
   },
 });
 
-mongoose.model("evalForm", formSchema);
+mongoose.model("Form", formSchema);

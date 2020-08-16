@@ -18,14 +18,12 @@ mongoose.connection.on("error", (err) => {
 });
 
 require("./models/user");
-require("./models/post");
 require("./models/teamModel.js");
 require("./models/formModel.js");
 
 app.use(require("./routes/api/auth"));
-// app.use(require('./routes/api/post'))
 app.use(require("./routes/api/user"));
-app.use(require("./routes/api/teamModel"));
+app.use(require("./routes/api/team"));
 
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));
