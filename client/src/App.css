@@ -1,6 +1,5 @@
 a{
   color:white !important;
-
 }
 
 .auth-card{
@@ -15,4 +14,8 @@ a{
 }
 .already{
   color: #000;
+}
+
+.btn-stretch {
+  width: 5vh;
 }
