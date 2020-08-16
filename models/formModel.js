@@ -5,6 +5,7 @@ const formSchema = new mongoose.Schema({
   team: {
     type: ObjectId,
     ref: "Team",
+    required: true
   },
   photo: { type: String },
   classPresence: {

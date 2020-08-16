@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Profile from './components/screens/Profile'
 import Home from './components/screens/Home'
+import evalForm from './components/screens/evalForm'
 import Signup from './components/screens/Signup'
 import Login from './components/screens/Login'
 import Navbar from './components/Navbar';
@@ -18,6 +19,7 @@ function App() {
     <Route path='/' exact component={Home}/>
 <Route path='/login' exact component={Login} />
 <Route path='/signup' exact component={Signup} />
+<Route path='/evalForm' exact component={evalForm} />
     </Switch>
     </Router> 
   );
