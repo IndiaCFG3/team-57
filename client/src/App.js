@@ -5,6 +5,9 @@ import Home from './components/screens/Home'
 import Signup from './components/screens/Signup'
 import Login from './components/screens/Login'
 import Navbar from './components/Navbar';
+import Teacher from './components/screens/Teacher';
+import StudentTeacher from './components/screens/StudentTeacher';
+import CreateTeam from './components/screens/CreateTeam';
 // import Landing from './components/layout/Landing';
 // import Routes from './components/routing/Routes';
 import "./App.css";
@@ -12,12 +15,14 @@ import "./App.css";
 function App() {
   return (
    <Router>
-
-    <Navbar/>
     <Switch>
     <Route path='/' exact component={Home}/>
-<Route path='/login' exact component={Login} />
-<Route path='/signup' exact component={Signup} />
+    <Route path='/profile' exact component={Profile}/>
+    <Route path='/teacher' exact component={Teacher}/>
+    <Route path='/studentteacher' exact component={StudentTeacher}/>
+    <Route path='/createteam' exact component={CreateTeam}/>
+    <Route path='/login' exact component={Login} />
+    <Route path='/signup' exact component={Signup} />
     </Switch>
     </Router> 
   );

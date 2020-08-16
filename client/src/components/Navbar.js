@@ -5,8 +5,10 @@ const Navbar=()=>{
 return (
     <nav>
     <div className="nav-wrapper black">
-      <Link to="/" className="brand-logo left">CodeStars</Link>
+      <Link to="/" className="left">
+        <h3>CodeStars</h3></Link>
       <ul id="nav-mobile" className="right ">
+        <li><Link to="/login">About</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Signup</Link></li>
       </ul>
