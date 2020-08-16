@@ -1,21 +1,19 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
-const PostSchema = new mongoose.Schema({
-  title: {
+const VideoSchema = new mongoose.Schema({
+  type: {
     type: String,
     required: true,
   },
-  body: {
+  url: {
     type: String,
     required: true,
-  },
-  photo: {
-    type: String,
-    required: true,
+    unique: true,
   },
   date: {
     type: Date,
-    default: Date.now,
-  },
+    default: Date.now
+  }
 });
-mongoose.model("Post", PostSchema);
+
+ mongoose.model("Video", VideoSchema);

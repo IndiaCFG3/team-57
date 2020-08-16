@@ -8,7 +8,7 @@ const { JWT_SECRET } = require("../../config/keys");
 const requireLogin = require("../../middleware/requireLogin");
 
 router.post('/signup',(req,res)=>{
-  const {name,email,password} = req.body 
+  const {name,email,password,role} = req.body 
   if(!email || !password || !name){
      return res.status(422).json({error:"please add all the fields"})
   }
@@ -23,7 +23,7 @@ router.post('/signup',(req,res)=>{
                 email,
                 password:hashedpassword,
                 name,
-                
+                role
             })
     
             user.save()
@@ -41,6 +41,78 @@ router.post('/signup',(req,res)=>{
   })
 });
 
+router.post('/signup/teacher',(req,res)=>{
+  const {name,email,password,role,school} = req.body 
+  if(!email || !password || !name){
+     return res.status(422).json({error:"please add all the fields"})
+  }
+  User.findOne({email:email})
+  .then((savedUser)=>{
+      if(savedUser){
+        return res.status(422).json({error:"user already exists with that email"})
+      }
+      bcrypt.hash(password,12)
+      .then(hashedpassword=>{
+            const user = new User({
+                email,
+                password:hashedpassword,
+                name,
+                role,
+                school
+            })
+    
+            user.save()
+            .then(user=>{
+                res.json({message:"saved successfully"})
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+      })
+     
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+});
+router.post('/signup/studentTeacher',(req,res)=>{
+  const {name,email,password,role,school,standard} = req.body 
+  if(!email || !password || !name){
+     return res.status(422).json({error:"please add all the fields"})
+  }
+  User.findOne({email:email})
+  .then((savedUser)=>{
+      if(savedUser){
+        return res.status(422).json({error:"user already exists with that email"})
+      }
+      bcrypt.hash(password,12)
+      .then(hashedpassword=>{
+            const user = new User({
+                email,
+                password:hashedpassword,
+                name,
+                role,
+                standard,
+                school
+            })
+    
+            user.save()
+            .then(user=>{
+                res.json({message:"saved successfully"})
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+      })
+     
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+});
+
+
+
 router.post('/signin',(req,res)=>{
   const {email,password} = req.body
   if(!email || !password){
@@ -56,8 +128,8 @@ router.post('/signin',(req,res)=>{
           if(doMatch){
               
              const token = jwt.sign({_id:savedUser._id},JWT_SECRET)
-             const {_id,name,email,followers,following,pic} = savedUser
-             res.json({token,user:{_id,name,email,followers,following,pic}})
+            
+             res.json({token,savedUser})
           }
           else{
               return res.status(422).json({error:"Invalid Email or password"})
