@@ -24,6 +24,7 @@ require("./models/formModel.js");
 app.use(require("./routes/api/auth"));
 app.use(require("./routes/api/user"));
 app.use(require("./routes/api/team"));
+app.use(require("./routes/api/form"));
 
 if (process.env.NODE_ENV == "production") {
   app.use(express.static("client/build"));
