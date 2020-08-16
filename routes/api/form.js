@@ -11,16 +11,27 @@ const requireLogin = require("../../middleware/requireLogin");
 const Team = mongoose.model("Team");
 const Form = mongoose.model("Form");
 router.post("/evalForm", async (req, res) => {
-   const {  } = req.body;
+   // const formT = new FormData();
+   // formT.append("classPresence", 8);
+   // formT.append("initiative", 8);
+   // formT.append("mentoring", 8);
+   // formT.append("confidence", 8);
+   // formT.append("leadership", 8);
+   // formT.append("subject", "PE");
+   //formT.append("photo", req.files.photo[0])
+   
+   const teamName = "TEAM";
    let fields = [];
   
    const multerStorage = multer.memoryStorage();
 
    const multerFilter = (req, file, cb) => {
    if (file.mimetype.startsWith("image")) {
+      console.log(file);
       cb(null, true);
    } else {
       cb(null, false);
+      console.log(err);
    }
    };
 
@@ -35,7 +46,10 @@ router.post("/evalForm", async (req, res) => {
 
    req.body.photo = "default.jpg";
 
+   console.log(req.files);
+
    if(req.files){
+      console.log(req.files);
       req.body.photo = `eval-${teamName}-${Date.now()}.jpeg`;
 
       await sharp(req.files.photo[0].buffer)
@@ -44,15 +58,7 @@ router.post("/evalForm", async (req, res) => {
          .toFile(`client/public/evalImages/${req.body.photo}`);
    }
 
-   const form = new Form({
-      photo: req.body.photo,
-      classPresence: 8,
-      initiative: 8,
-      mentoring: 8,
-      confidence: 8,
-      leadership: 8,
-      subject: "PE"
-   });
+   const form = new Form();
    form
      .save()
      .then(res.json({ message: "Form saved" }))
