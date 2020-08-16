@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
 const teamSchema = new mongoose.Schema({
+  name: {
+    typ: String,
+    required: true,
+  },
   student1: {
     type: ObjectId,
     ref: "users",
@@ -9,7 +13,6 @@ const teamSchema = new mongoose.Schema({
     type: ObjectId,
     ref: "users",
   },
-
 });
 
 mongoose.model("Team", teamSchema);
