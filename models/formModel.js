@@ -6,6 +6,7 @@ const formSchema = new mongoose.Schema({
     type: ObjectId,
     ref: "Team",
   },
+  photo: { type: String },
   classPresence: {},
   initiative: {
     type: Number,
